@@ -9,7 +9,9 @@ from PIL import Image
 from typing import List, Dict, Any, Optional, Tuple
 
 # (Assume Preprocessor, ConditionClassifier, Recommender are defined above in the same module)
-from realestate_ai import Preprocessor, ConditionClassifier, Recommender  # if split across files
+
+#from realestate_ai import Preprocessor, ConditionClassifier, Recommender  # if split across files
+from models import *
 
 # -------------------- Image + LLM Property Analyzer --------------------
 try:
@@ -142,4 +144,5 @@ class PropertyAnalyzer:
             for k,v in (llm_out or {}).items():
                 out[k] = v
         return out
+
 
