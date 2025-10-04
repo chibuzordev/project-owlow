@@ -1,3 +1,8 @@
+from typing import Optional, List, Dict, Any
+import pandas as pd
+import math
+import json
+import requests
 from .recommender import Recommender
 
 class Advisor:
@@ -139,6 +144,7 @@ class Advisor:
         except Exception as e:
             print(f"[ERROR] Failed to POST advice: {e}")
             return None
+
 
 
 
