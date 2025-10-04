@@ -1,7 +1,7 @@
-from preprocess import Preprocessor
-from condition_classifier import ConditionClassifier
-from advisor import Advisor
-from analyzer import PropertyAnalyzer
+from .analyzer import PropertyAnalyzer
+from .preprocess import Preprocessor
+from .condition_classifier import ConditionClassifier
+from .advisor import Advisor
 
 class Recommender:
     """
