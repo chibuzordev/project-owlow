@@ -1,4 +1,3 @@
-# -------------------- Advisor (wraps Recommender) --------------------
 class Advisor:
     """
     Wraps a fitted Recommender instance to provide:
@@ -138,5 +137,6 @@ class Advisor:
         except Exception as e:
             print(f"[ERROR] Failed to POST advice: {e}")
             return None
+
 
 
