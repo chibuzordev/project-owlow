@@ -4,7 +4,8 @@ import io
 import base64
 import requests
 from PIL import Image
-from typing import List, Dict, Any, Optional, Tuple
+from typing import List, Dict, Any, Optional
+from .condition_classifier import ConditionClassifier
 
 try:
     from openai import OpenAI
