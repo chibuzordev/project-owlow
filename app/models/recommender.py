@@ -1,3 +1,6 @@
+import pandas as pd
+import numpy as np
+import ast, re, requests
 from .analyzer import PropertyAnalyzer
 from .preprocessor import Preprocessor
 from .condition_classifier import ConditionClassifier
