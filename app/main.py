@@ -4,7 +4,7 @@ import pandas as pd, json
 
 # services
 from app.models.preprocess import Preprocessor
-from app.models.condition import ConditionClassifier
+from app.models.condition_classifier import ConditionClassifier
 from app.models.recommender import Recommender
 from app.models.advisor import Advisor
 from app.models.analyzer import PropertyAnalyzer
@@ -65,5 +65,6 @@ def advice(req: AdviceRequest):
     payload = advisor.advise(budget=req.budget, budget_range=req.budget_range, city=req.city, title=req.title,
                              reference_id=req.reference_id, top_n=req.top_n, include_condition=req.include_condition)
     return payload
+
 
 
