@@ -1,4 +1,7 @@
-import preprocess, condition_classifier, analyzer, advisor
+from preprocess import Preprocessor
+from condition_classifier import ConditionClassifier
+from advisor import Advisor
+from analyzer import PropertyAnalyzer
 
 class Recommender:
     """
