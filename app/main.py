@@ -9,7 +9,7 @@ from app.services.recommender import Recommender
 from app.services.advisor import Advisor
 from app.services.analyzer import PropertyAnalyzer
 
-app = FastAPI(title="Prop-Intel MVP API")
+app = FastAPI(title="Owlow API")
 
 prep = Preprocessor()
 cond = ConditionClassifier()
@@ -65,3 +65,4 @@ def advice(req: AdviceRequest):
     payload = advisor.advise(budget=req.budget, budget_range=req.budget_range, city=req.city, title=req.title,
                              reference_id=req.reference_id, top_n=req.top_n, include_condition=req.include_condition)
     return payload
+
