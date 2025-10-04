@@ -11,18 +11,17 @@ from app.models.advisor import Advisor
 from app.models.analyzer import PropertyAnalyzer
 
 app = FastAPI(title="Owlow API")
+url = "https://fvwtwkcrmm.us-east-1.awsapprunner.com/api/listings"
 
+fetcher = DataFetcher(url)
 prep = Preprocessor()
 cond = ConditionClassifier()
 rec = Recommender()
 advisor = Advisor()
-df_prepped = None
 analyzer = PropertyAnalyzer()
 
-# --- Example usage ---
-url = "https://fvwtwkcrmm.us-east-1.awsapprunner.com/api/listings"
-fetcher = DataFetcher(url)
 listings_df = fetcher.fetch_dataframe()
+df_prepped = prep.transform(listings_df)
 
 @app.on_event("startup")
 def startup():
@@ -71,6 +70,7 @@ def advice(req: AdviceRequest):
     payload = advisor.advise(budget=req.budget, budget_range=req.budget_range, city=req.city, title=req.title,
                              reference_id=req.reference_id, top_n=req.top_n, include_condition=req.include_condition)
     return payload
+
 
 
 
