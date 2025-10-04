@@ -8,10 +8,13 @@ import requests
 from PIL import Image
 from typing import List, Dict, Any, Optional, Tuple
 
-# (Assume Preprocessor, ConditionClassifier, Recommender are defined above in the same module)
+from apps.models.datafetcher import DataFetcher
+from apps.models.preprocess import Preprocessor
+from apps.models.condition_classifier import ConditionClassifier
+from apps.models.recommender import Recommender
+from apps.models.analyzer import PropertyAnalyzer
+from apps.models.adviser import Adviser
 
-#from realestate_ai import Preprocessor, ConditionClassifier, Recommender  # if split across files
-from models import *
 
 # -------------------- Image + LLM Property Analyzer --------------------
 try:
@@ -144,5 +147,6 @@ class PropertyAnalyzer:
             for k,v in (llm_out or {}).items():
                 out[k] = v
         return out
+
 
 
