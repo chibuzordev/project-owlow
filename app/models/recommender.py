@@ -1,7 +1,6 @@
 from .analyzer import PropertyAnalyzer
 from .preprocessor import Preprocessor
 from .condition_classifier import ConditionClassifier
-from .advisor import Advisor
 
 class Recommender:
     """
