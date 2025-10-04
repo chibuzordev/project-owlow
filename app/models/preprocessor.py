@@ -1,3 +1,7 @@
+import pandas as pd
+import numpy as np
+import ast, re, requests
+
 class Preprocessor:
     """Flatten nested fields and create useful engineered columns."""
 
