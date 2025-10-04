@@ -1,4 +1,3 @@
-# -------------------- Batch 3: Advisor + Image/LLM PropertyAnalyzer + Pipeline --------------------
 import time
 import math
 import json
@@ -8,7 +7,7 @@ import requests
 from PIL import Image
 from typing import List, Dict, Any, Optional, Tuple
 
-# (Assume Preprocessor, ConditionClassifier, Recommender are defined above in the same module)
+
 import preprocess, condition_classifier, recommender  # if split across files
 
 # -------------------- Image + LLM Property Analyzer --------------------
