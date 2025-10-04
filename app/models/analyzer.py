@@ -14,7 +14,7 @@ from .advisor import Advisor
 try:
     from openai import OpenAI
     _OPENAI_AVAILABLE = True
-    _openai_client = OpenAI()
+    _openai_client = OpenAI(api_key=os.getenv("OPENAI_API_KEY"))
 except Exception:
     _OPENAI_AVAILABLE = False
     _openai_client = None
