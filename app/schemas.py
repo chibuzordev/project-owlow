@@ -9,11 +9,11 @@ from PIL import Image
 from typing import List, Dict, Any, Optional, Tuple
 
 from app.models.datafetcher import DataFetcher
-from app.models.preprocess import Preprocessor
+from app.models.preprocessor import Preprocessor
 from app.models.condition_classifier import ConditionClassifier
 from app.models.recommender import Recommender
 from app.models.analyzer import PropertyAnalyzer
-from app.models.adviser import Adviser
+from app.models.advisor import Advisor
 
 
 # -------------------- Image + LLM Property Analyzer --------------------
@@ -147,6 +147,7 @@ class PropertyAnalyzer:
             for k,v in (llm_out or {}).items():
                 out[k] = v
         return out
+
 
 
 
