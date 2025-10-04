@@ -9,7 +9,7 @@ from PIL import Image
 from typing import List, Dict, Any, Optional, Tuple
 
 # (Assume Preprocessor, ConditionClassifier, Recommender are defined above in the same module)
-import preprocessor, condition_classifier, recommender  # if split across files
+import preprocess, condition_classifier, recommender  # if split across files
 
 # -------------------- Image + LLM Property Analyzer --------------------
 try:
