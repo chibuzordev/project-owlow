@@ -1,0 +1,9 @@
+fastapi
+uvicorn
+pandas
+numpy
+scikit-learn
+sentence-transformers
+openai
+pillow
+requests
