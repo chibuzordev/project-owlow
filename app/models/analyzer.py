@@ -6,11 +6,11 @@ import base64
 import requests
 from PIL import Image
 from typing import List, Dict, Any, Optional, Tuple
+from .preprocess import Preprocessor
+from .condition_classifier import ConditionClassifier
+from .recommender import Recommender
+from .advisor import Advisor
 
-
-import preprocess, condition_classifier, recommender  # if split across files
-
-# -------------------- Image + LLM Property Analyzer --------------------
 try:
     from openai import OpenAI
     _OPENAI_AVAILABLE = True
