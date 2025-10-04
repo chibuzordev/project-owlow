@@ -16,11 +16,15 @@ fetcher = DataFetcher(url)
 prep = Preprocessor()
 cond = ConditionClassifier()
 rec = Recommender()
-advisor = Advisor()
 analyzer = PropertyAnalyzer()
 
 listings_df = fetcher.fetch_dataframe()
 df_prepped = prep.transform(listings_df)
+
+rec.fit(df_prepped)
+rec.export_recommendations(path="recs.json", fmt="json", style="nested", top_n=5)
+
+advisor = Advisor(rec)
 
 @app.on_event("startup")
 def startup():
@@ -69,6 +73,7 @@ def advice(req: AdviceRequest):
     payload = advisor.advise(budget=req.budget, budget_range=req.budget_range, city=req.city, title=req.title,
                              reference_id=req.reference_id, top_n=req.top_n, include_condition=req.include_condition)
     return payload
+
 
 
 
