@@ -1,4 +1,6 @@
 import pandas as pd
+from typing import Optional, List, Dict, Tuple
+import json
 import numpy as np
 import ast, re, requests
 from .analyzer import PropertyAnalyzer
